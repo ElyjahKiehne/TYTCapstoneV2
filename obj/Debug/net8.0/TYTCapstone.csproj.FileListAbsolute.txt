@@ -1034,3 +1034,4 @@
 /home/ekiehne/Capstone/TYTCapstone/bin/Debug/net8.0/Antlr4.Runtime.Standard.dll
 /home/ekiehne/Capstone/TYTCapstone/obj/Debug/net8.0/webcil/Antlr4.Runtime.Standard.wasm
 /home/ekiehne/Capstone/TYTCapstone/obj/Debug/net8.0/compressed/t9e6ytizs9.gz
+/home/ekiehne/Capstone/TYTCapstone/obj/Debug/net8.0/TYTCapstone.sourcelink.json
