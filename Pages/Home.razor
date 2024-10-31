@@ -1,0 +1,33 @@
+﻿@page "/"
+@using Antlr4.Runtime;
+@using System.Text.Json;
+
+<ASTNodeComponent Node="ast" />
+
+@code {
+    protected override void OnInitialized(){
+        string code = @"class HelloWorld {
+                            static void main(String[] args) {
+                                println 'Hello, World!'
+                            }
+                        }";
+
+        // Parse the code
+        AntlrInputStream inputStream = new AntlrInputStream(code);
+        GroovyLexer lexer = new GroovyLexer(inputStream);
+        CommonTokenStream tokenStream = new CommonTokenStream(lexer);
+        GroovyParser parser = new GroovyParser(tokenStream);
+        GroovyParser.CompilationUnitContext tree = parser.compilationUnit();
+
+        // Create and attach your listener
+        ASTListener listener = new ASTListener();
+        ParseTreeWalker walker = new ParseTreeWalker();
+        walker.Walk(listener, tree);
+
+        // Retrieve the root of your AST
+        ASTNode astRoot = listener.Root;
+
+        // Serialize the AST
+        string json = JsonSerializer.Serialize(astRoot, new JsonSerializerOptions { WriteIndented = true });
+    }
+}
