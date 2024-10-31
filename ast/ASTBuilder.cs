@@ -4,7 +4,6 @@ public abstract class ASTNode
 {
     public List<ASTNode> Children { get; set; } = new List<ASTNode>();
     public string Text { get; set; }
-    public 
 }
 
 public class CompilationUnitNode : ASTNode
@@ -28,8 +27,6 @@ public class ASTListener : GroovyParserBaseListener
         var node = new CompilationUnitNode
         {
             Text = context.GetText(),
-            Line = context.Start.Line,
-            Column = context.Start.Column
         };
         _stack.Push(node);
     }
@@ -53,8 +50,6 @@ public class ASTListener : GroovyParserBaseListener
         {
             ClassName = context.IDENTIFIER().GetText(),
             Text = context.GetText(),
-            Line = context.Start.Line,
-            Column = context.Start.Column
         };
         _stack.Push(node);
     }
@@ -64,6 +59,4 @@ public class ASTListener : GroovyParserBaseListener
         var node = _stack.Pop();
         _stack.Peek().Children.Add(node);
     }
-
-    // Override other methods for different grammar rules
 }

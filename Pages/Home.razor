@@ -1,10 +1,13 @@
 ﻿@page "/"
 @using Antlr4.Runtime;
 @using System.Text.Json;
+@using Antlr4.Runtime.Tree;
 
-<ASTNodeComponent Node="ast" />
+<ASTNodeComponent Node="astRoot" />
 
 @code {
+    private ASTNode? astRoot;
+
     protected override void OnInitialized(){
         string code = @"class HelloWorld {
                             static void main(String[] args) {
@@ -25,7 +28,7 @@
         walker.Walk(listener, tree);
 
         // Retrieve the root of your AST
-        ASTNode astRoot = listener.Root;
+        astRoot = listener.Root;
 
         // Serialize the AST
         string json = JsonSerializer.Serialize(astRoot, new JsonSerializerOptions { WriteIndented = true });
