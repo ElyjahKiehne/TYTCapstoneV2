@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TYTCapstone")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2f6100e7dd368fbc3adb012e2813a5220dcbd988")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+09af1c8a9f2dc915d341f0648ea7cd4f2eddf51a")]
 [assembly: System.Reflection.AssemblyProductAttribute("TYTCapstone")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TYTCapstone")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

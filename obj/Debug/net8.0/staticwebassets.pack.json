@@ -37,6 +37,10 @@
       "PackagePath": "staticwebassets\\index.html"
     },
     {
+      "Id": "C:\\Users\\elyja\\Source\\Repos\\TYTCapstoneV2\\wwwroot\\js\\parseTreeInterop.js",
+      "PackagePath": "staticwebassets\\js\\parseTreeInterop.js"
+    },
+    {
       "Id": "C:\\Users\\elyja\\Source\\Repos\\TYTCapstoneV2\\wwwroot\\sample-data\\weather.json",
       "PackagePath": "staticwebassets\\sample-data\\weather.json"
     },

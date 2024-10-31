@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "tWbBvjXE2Vea553hm8osuJGoGtKQL85XXWGR4WyEmAY=",
+  "Hash": "5Yw7YCpoE5xuzvteDjQoHWixO609xpYKguz7qzkx+yc=",
   "Source": "TYTCapstone",
   "BasePath": "/",
   "Mode": "Root",
@@ -7957,6 +7957,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\elyja\\Source\\Repos\\TYTCapstoneV2\\wwwroot\\js\\parseTreeInterop.js",
+      "SourceId": "TYTCapstone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\elyja\\Source\\Repos\\TYTCapstoneV2\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "js/parseTreeInterop.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\parseTreeInterop.js"
     },
     {
       "Identity": "C:\\Users\\elyja\\Source\\Repos\\TYTCapstoneV2\\wwwroot\\sample-data\\weather.json",

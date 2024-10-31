@@ -2,7 +2,9 @@
 @using Antlr4.Runtime;
 @using System.Text.Json;
 @using Antlr4.Runtime.Tree;
+@using Antlr4.Runtime.Tree.Xpath;
 @using System.Text;
+@inject IJSRuntime jsRuntime
 
 @* <ASTNodeComponent Node="astRoot" /> *@
 
@@ -10,10 +12,17 @@
     @TreeString
 </pre>
 
+<button @onclick="RenderParseTree">Render Parse Tree</button>
+
+<div id="parseTree"></div>
+
 
 @code {
     //private ASTNode? astRoot;
     private string? TreeString { get; set; }
+    private TreeNode? TreeData { get; set; }
+
+    private string? TreeStringJson { get; set; }
 
     protected override void OnInitialized(){
         string code = @"class HelloWorld {
@@ -30,6 +39,17 @@
         GroovyParser.CompilationUnitContext tree = parser.compilationUnit();
 
         TreeString = PrettyPrintTree(tree.ToStringTree(parser));
+
+        // Use the root parse tree node to generate the full structure
+        ParseTreeJsonConverter converter = new ParseTreeJsonConverter();
+        TreeNode rootNode = converter.ConvertToJson(tree, parser);
+
+        TreeStringJson = JsonSerializer.Serialize(rootNode, new JsonSerializerOptions { WriteIndented = true });
+    }
+
+    public async Task RenderParseTree()
+    {
+        await jsRuntime.InvokeVoidAsync("renderParseTree", JsonDocument.Parse(TreeStringJson).RootElement);
     }
 
     public static string PrettyPrintTree(string treeString)
