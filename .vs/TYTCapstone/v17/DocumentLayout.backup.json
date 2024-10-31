@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|c:\\users\\elyja\\source\\repos\\tytcapstonev2\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|solutionrelative:pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|c:\\users\\elyja\\source\\repos\\tytcapstonev2\\components\\astnodecomponent.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|solutionrelative:components\\astnodecomponent.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|c:\\users\\elyja\\source\\repos\\tytcapstonev2\\ast\\astbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|solutionrelative:ast\\astbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|c:\\users\\elyja\\source\\repos\\tytcapstonev2\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|solutionrelative:pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|c:\\users\\elyja\\source\\repos\\tytcapstonev2\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|c:\\users\\elyja\\source\\repos\\tytcapstonev2\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -26,15 +34,48 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 7,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
+              "Title": "ASTNodeComponent.razor",
+              "DocumentMoniker": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\components\\ASTNodeComponent.razor",
+              "RelativeDocumentMoniker": "components\\ASTNodeComponent.razor",
+              "ToolTip": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\components\\ASTNodeComponent.razor",
+              "RelativeToolTip": "components\\ASTNodeComponent.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-31T22:00:48.971Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-10-31T21:33:48.935Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "_Imports.razor",
               "DocumentMoniker": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\_Imports.razor",
               "RelativeDocumentMoniker": "_Imports.razor",
@@ -42,44 +83,42 @@
               "RelativeToolTip": "_Imports.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-31T21:15:47.178Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-31T21:15:47.178Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "TYTCapstone",
+              "DocumentIndex": 5,
+              "Title": "TYTCapstone.csproj",
               "DocumentMoniker": "C:\\Users\\elyja\\Source\\Repos\\TYTCapstoneV2\\TYTCapstone.csproj",
               "RelativeDocumentMoniker": "TYTCapstone.csproj",
               "ToolTip": "C:\\Users\\elyja\\Source\\Repos\\TYTCapstoneV2\\TYTCapstone.csproj",
               "RelativeToolTip": "TYTCapstone.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-10-31T21:15:29.755Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-31T21:15:29.755Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Home.razor",
               "DocumentMoniker": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\Pages\\Home.razor",
               "RelativeDocumentMoniker": "Pages\\Home.razor",
               "ToolTip": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\Pages\\Home.razor",
               "RelativeToolTip": "Pages\\Home.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAEgAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-10-31T21:06:48.732Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "ASTBuilder.cs",
               "DocumentMoniker": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\ast\\ASTBuilder.cs",
               "RelativeDocumentMoniker": "ast\\ASTBuilder.cs",
               "ToolTip": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\ast\\ASTBuilder.cs",
               "RelativeToolTip": "ast\\ASTBuilder.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAswCMAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-31T21:06:22.464Z",
               "EditorCaption": ""
