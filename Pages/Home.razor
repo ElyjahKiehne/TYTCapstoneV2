@@ -5,14 +5,23 @@
 @using Antlr4.Runtime.Tree.Xpath;
 @using System.Text;
 @inject IJSRuntime jsRuntime
+@using Microsoft.AspNetCore.Components.Forms
 
 @* <ASTNodeComponent Node="astRoot" /> *@
+
+<InputFile OnChange="@HandleFileUpload" />
+<button @onclick="RenderParseTree" disabled="@(!HasFileContent)">Render Parse Tree</button>
+
+<div class="mt-3">
+    @if (ErrorMessage != null)
+    {
+        <div class="alert alert-danger">@ErrorMessage</div>
+    }
+</div>
 
 <pre>
     @TreeString
 </pre>
-
-<button @onclick="RenderParseTree">Render Parse Tree</button>
 
 <div id="parseTree"></div>
 
@@ -23,28 +32,65 @@
     private TreeNode? TreeData { get; set; }
 
     private string? TreeStringJson { get; set; }
+    private string? ErrorMessage { get; set; }
+    private bool HasFileContent { get; set; }
+    private string FileContent { get; set; } = string.Empty;
 
-    protected override void OnInitialized(){
-        string code = @"class HelloWorld {
-                            static void main(String[] args) {
-                                println 'Hello, World!'
-                            }
-                        }";
+    private async Task HandleFileUpload(InputFileChangeEventArgs e)
+    {
+        try
+        {
+            ErrorMessage = null;
+            var file = e.File;
+            if (file.ContentType != "text/x-groovy" && !file.Name.EndsWith(".groovy"))
+            {
+                ErrorMessage = "Please upload a Groovy file (.groovy)";
+                return;
+            }
 
-        // Parse the code
-        AntlrInputStream inputStream = new AntlrInputStream(code);
-        GroovyLexer lexer = new GroovyLexer(inputStream);
-        CommonTokenStream tokenStream = new CommonTokenStream(lexer);
-        GroovyParser parser = new GroovyParser(tokenStream);
-        GroovyParser.CompilationUnitContext tree = parser.compilationUnit();
+            using var reader = new StreamReader(file.OpenReadStream());
+            FileContent = await reader.ReadToEndAsync();
+            ParseGroovyCode(FileContent);
+            HasFileContent = true;
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = $"Error processing file: {ex.Message}";
+            HasFileContent = false;
+        }
+    }
 
-        TreeString = PrettyPrintTree(tree.ToStringTree(parser));
+    private void ParseGroovyCode(string code)
+    {
+        try
+        {
+            AntlrInputStream inputStream = new AntlrInputStream(code);
+            GroovyLexer lexer = new GroovyLexer(inputStream);
+            CommonTokenStream tokenStream = new CommonTokenStream(lexer);
+            GroovyParser parser = new GroovyParser(tokenStream);
+            GroovyParser.CompilationUnitContext tree = parser.compilationUnit();
 
-        // Use the root parse tree node to generate the full structure
-        ParseTreeJsonConverter converter = new ParseTreeJsonConverter();
-        TreeNode rootNode = converter.ConvertToJson(tree, parser);
+            TreeString = PrettyPrintTree(tree.ToStringTree(parser));
 
-        TreeStringJson = JsonSerializer.Serialize(rootNode, new JsonSerializerOptions { WriteIndented = true });
+            ParseTreeJsonConverter converter = new ParseTreeJsonConverter();
+            TreeNode rootNode = converter.ConvertToJson(tree, parser);
+
+            TreeStringJson = JsonSerializer.Serialize(rootNode, new JsonSerializerOptions { WriteIndented = true });
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = $"Error parsing Groovy code: {ex.Message}";
+        }
+    }
+
+    protected override void OnInitialized()
+    {
+        // Initialize with a simple example
+        ParseGroovyCode(@"class HelloWorld {
+            static void main(String[] args) {
+                println 'Hello, World!'
+            }
+        }");
     }
 
     public async Task RenderParseTree()
