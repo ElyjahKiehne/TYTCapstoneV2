@@ -1,49 +1,41 @@
 ﻿using System.Text;
 using Antlr4.Runtime.Misc;
 using TYTCapstone;
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 public class GroovyToCSharpTranspiler : GroovyParserBaseVisitor<string>
 {
     private StringBuilder CodeBuilder = new StringBuilder();
     private int IndentLevel = 0;
 
-    // Helper method to manage indentation
-    private void AppendLine(string line)
-    {
-        CodeBuilder.AppendLine(new string(' ', IndentLevel * 4) + line);
-    }
+    private CompilationUnitSyntax CsharpSyntaxTree = SyntaxFactory.CompilationUnit();
 
     // Entry point to generate C# code
     public string Transpile(GroovyParser.CompilationUnitContext context)
     {
-        Visit(context);
-        return CodeBuilder.ToString();
+        this.Visit(context);
+        return CsharpSyntaxTree.ToFullString();
     }
 
     // Visit the compilation unit
-    public override string VisitCompilationUnit(GroovyParser.CompilationUnitContext context)
+    public override string VisitCompilationUnit([NotNull] GroovyParser.CompilationUnitContext context)
     {
+        Console.WriteLine("Transpiling Compilation Unit");
+
         foreach (var child in context.children)
         {
-            Visit(child);
+            Console.WriteLine("DEBUG: child.Payload: " + child.Payload);
+            Console.WriteLine("DEBUG: child.GetType(): " + child.GetType().ToString());
+            // Visit(child);
         }
-        return null;
+        return "";
     }
 
     // Visit class declaration
-    public override string VisitClassDeclaration(GroovyParser.ClassDeclarationContext context)
+    public override string VisitClassDeclaration([NotNull] GroovyParser.ClassDeclarationContext context)
     {
-        string className = context.IDENTIFIER().GetText();
-
-        AppendLine($"public class {className}");
-        AppendLine("{");
-        IndentLevel++;
-
-        // Visit class body
-        Visit(context.classBody());
-
-        IndentLevel--;
-        AppendLine("}");
-        return null;
+        return "";
     }
 }
