@@ -6,6 +6,7 @@
 @using System.Text;
 @inject IJSRuntime jsRuntime
 @using Microsoft.AspNetCore.Components.Forms
+@using Castle.DynamicProxy
 
 @* <ASTNodeComponent Node="astRoot" /> *@
 
@@ -45,15 +46,17 @@
 
     GroovyParser.CompilationUnitContext? GroovyTree;
 
-    GroovyToCSharpTranspiler Transpiler = new GroovyToCSharpTranspiler();
-
     string TranspiledGroovy = "";
+
+    ProxyGenerator proxyGenerator = new ProxyGenerator();
 
     private void TranspileGroovyCode()
     {
+        GroovyToCSharpTranspiler TranspilerAutoLogProxy = proxyGenerator.CreateClassProxy<GroovyToCSharpTranspiler>(new LoggingInterceptor());
+
         if (GroovyTree is not null)
         {
-            TranspiledGroovy = Transpiler.Transpile(GroovyTree);
+            TranspiledGroovy = TranspilerAutoLogProxy.Transpile(GroovyTree);
         }
     }
 

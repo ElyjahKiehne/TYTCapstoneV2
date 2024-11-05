@@ -4286,3 +4286,13 @@ C:\Users\elyja\Source\Repos\TYTCapstoneV2\obj\Debug\net8.0\compressed\wh48l4isgi
 C:\Users\elyja\Source\Repos\TYTCapstoneV2\obj\Debug\net8.0\compressed\xzxs8rldu4.gz
 C:\Users\elyja\Source\Repos\TYTCapstoneV2\obj\Debug\net8.0\compressed\iqn1c1d6m0.gz
 C:\Users\elyja\Source\Repos\TYTCapstoneV2\obj\Debug\net8.0\compressed\x00cv9bwyl.gz
+C:\Users\elyja\Source\Repos\TYTCapstoneV2\bin\Debug\net8.0\wwwroot\_framework\Castle.Core.wasm
+C:\Users\elyja\Source\Repos\TYTCapstoneV2\bin\Debug\net8.0\wwwroot\_framework\System.Diagnostics.EventLog.wasm
+C:\Users\elyja\Source\Repos\TYTCapstoneV2\bin\Debug\net8.0\wwwroot\_framework\Castle.Core.wasm.gz
+C:\Users\elyja\Source\Repos\TYTCapstoneV2\bin\Debug\net8.0\wwwroot\_framework\System.Diagnostics.EventLog.wasm.gz
+C:\Users\elyja\Source\Repos\TYTCapstoneV2\bin\Debug\net8.0\Castle.Core.dll
+C:\Users\elyja\Source\Repos\TYTCapstoneV2\bin\Debug\net8.0\System.Diagnostics.EventLog.dll
+C:\Users\elyja\Source\Repos\TYTCapstoneV2\obj\Debug\net8.0\webcil\Castle.Core.wasm
+C:\Users\elyja\Source\Repos\TYTCapstoneV2\obj\Debug\net8.0\webcil\System.Diagnostics.EventLog.wasm
+C:\Users\elyja\Source\Repos\TYTCapstoneV2\obj\Debug\net8.0\compressed\8h5thoqrwo.gz
+C:\Users\elyja\Source\Repos\TYTCapstoneV2\obj\Debug\net8.0\compressed\wf4sy84wpa.gz

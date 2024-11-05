@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "TYTCapstone",
   "resources": {
-    "hash": "sha256-ecmSj7HZLmICpFJP7+z95avWT+RqEuRopIqW0D8C8T8=",
+    "hash": "sha256-tX8laFgCiGcZF1cAghhDi5DuXDBb8n0r1VpsoY6LBDI=",
     "jsModuleNative": {
       "dotnet.native.8.0.10.ieknr1xylu.js": "sha256-QVxMlY7ohmjgde/bZMA0dlWDAeuUP+tEfkiSdg4DFcE="
     },
@@ -18,6 +18,7 @@
     },
     "assembly": {
       "Antlr4.Runtime.Standard.wasm": "sha256-3Nrdh18+n0hrNSHApYis3JqGlQHY7ur5E3DZQmNxCIw=",
+      "Castle.Core.wasm": "sha256-t3lFppQa0mtcJhnAgH0CjaUgx5yVh9lHRfx3jZagZmQ=",
       "Microsoft.AspNetCore.Authorization.wasm": "sha256-qvUVaVXCx0vIwC1ftYywcGopJB8y43BbfcCt3G9PQgM=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-xr0Ov2b8dQS8xDDq0cDAHAiTk03Nhy7Nb/TaMeGY25U=",
       "Microsoft.AspNetCore.Components.Forms.wasm": "sha256-xdmm/nojXhCuTTDwhSWKmv9GQ/HGjW58Sxp2/m3FH8w=",
@@ -42,6 +43,7 @@
       "Microsoft.Extensions.Primitives.wasm": "sha256-pVrYOTfjb2ITls3LKIByW1t8jwOAWFhmkIVDewtJ1GE=",
       "Microsoft.JSInterop.wasm": "sha256-t9q43mL+SUSnDmA3kXTLQ42nvlXwYmnKxyqFFPYcifs=",
       "Microsoft.JSInterop.WebAssembly.wasm": "sha256-AQCuGvuEaOGJIRllBm0t1I9jKw+kNMrILxGeDDgzgzY=",
+      "System.Diagnostics.EventLog.wasm": "sha256-F2Id9a+/OB+z663S4PbQr6in1K4m9vFHUDftm8H5hmk=",
       "System.IO.Pipelines.wasm": "sha256-JqVBy6SV+3qk+IK3VJiyIDt9CsVk6b1/ytTXmrI4mTM=",
       "Microsoft.CSharp.wasm": "sha256-bqu74vg/La1Ub2pVw0G0r6S6XMaAgbrpFYRK6yHXlo4=",
       "Microsoft.VisualBasic.Core.wasm": "sha256-tv/7FnHANUZX7lUT4coWbRvG2fJUgCrJiCcOYFEuNXY=",
@@ -211,10 +213,10 @@
       "mscorlib.wasm": "sha256-KvqZaNpjwhrOuzE4b4aMFsI+VUTyiWfoDI4zn4l9BM8=",
       "netstandard.wasm": "sha256-v+s7sWxtOM6bnOvC0jFrtnm6uMfbDymwl2nHNgbS2LM=",
       "System.Private.CoreLib.wasm": "sha256-pklll63uFQoY6vaD3vbluS9osYiJWLLLmob1yHFgepI=",
-      "TYTCapstone.wasm": "sha256-TfJDQOCRF/SPtSuUmLhP/p+t+OTfQ9BtjogYaLCeuIQ="
+      "TYTCapstone.wasm": "sha256-j6e7bOA2f5mjsCtEYHsb3Y0N1h9afDoaemk4+XmsNlA="
     },
     "pdb": {
-      "TYTCapstone.pdb": "sha256-GCF4D5FzhC82Hc1lrU7dLCV8SezgPfSxYqDXcjn6K24="
+      "TYTCapstone.pdb": "sha256-zjmdDD/nNv4NGXpZ40ottRQynFcTYPXBmXHaS31dMvY="
     },
     "satelliteResources": {
       "cs": {

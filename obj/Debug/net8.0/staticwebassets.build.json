@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gT3aSJnC+X5Dz4p9n208SzZcUExFRj+ATQFrMnyzdwo=",
+  "Hash": "wgTnn4Pg5JltEJGXqF0st/sbG0lSMAEBNrwgUbnUihY=",
   "Source": "TYTCapstone",
   "BasePath": "/",
   "Mode": "Root",
@@ -72,6 +72,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\elyja\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\8.0.10\\build\\net8.0\\blazor.webassembly.js"
+    },
+    {
+      "Identity": "C:\\Users\\elyja\\Source\\Repos\\TYTCapstoneV2\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Castle.Core.wasm",
+      "SourceId": "TYTCapstone",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\elyja\\Source\\Repos\\TYTCapstoneV2\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Castle.Core.wasm",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "WasmResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\elyja\\Source\\Repos\\TYTCapstoneV2\\obj\\Debug\\net8.0\\webcil\\Castle.Core.wasm"
     },
     {
       "Identity": "C:\\Users\\elyja\\Source\\Repos\\TYTCapstoneV2\\bin\\Debug\\net8.0\\wwwroot\\_framework\\cs\\Microsoft.CodeAnalysis.CSharp.resources.wasm",
@@ -1630,6 +1649,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\elyja\\Source\\Repos\\TYTCapstoneV2\\obj\\Debug\\net8.0\\webcil\\System.Diagnostics.DiagnosticSource.wasm"
+    },
+    {
+      "Identity": "C:\\Users\\elyja\\Source\\Repos\\TYTCapstoneV2\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Diagnostics.EventLog.wasm",
+      "SourceId": "TYTCapstone",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\elyja\\Source\\Repos\\TYTCapstoneV2\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/System.Diagnostics.EventLog.wasm",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "WasmResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\elyja\\Source\\Repos\\TYTCapstoneV2\\obj\\Debug\\net8.0\\webcil\\System.Diagnostics.EventLog.wasm"
     },
     {
       "Identity": "C:\\Users\\elyja\\Source\\Repos\\TYTCapstoneV2\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Diagnostics.FileVersionInfo.wasm",
@@ -5337,6 +5375,25 @@
       "OriginalItemSpec": "C:\\Users\\elyja\\Source\\Repos\\TYTCapstoneV2\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Net.WebSockets.wasm"
     },
     {
+      "Identity": "C:\\Users\\elyja\\Source\\Repos\\TYTCapstoneV2\\obj\\Debug\\net8.0\\compressed\\8h5thoqrwo.gz",
+      "SourceId": "TYTCapstone",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\elyja\\Source\\Repos\\TYTCapstoneV2\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Castle.Core.wasm.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\elyja\\Source\\Repos\\TYTCapstoneV2\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Castle.Core.wasm",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\elyja\\Source\\Repos\\TYTCapstoneV2\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Castle.Core.wasm"
+    },
+    {
       "Identity": "C:\\Users\\elyja\\Source\\Repos\\TYTCapstoneV2\\obj\\Debug\\net8.0\\compressed\\8jdagykyo0.gz",
       "SourceId": "TYTCapstone",
       "SourceType": "Computed",
@@ -8280,6 +8337,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\elyja\\Source\\Repos\\TYTCapstoneV2\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Dynamic.Runtime.wasm"
+    },
+    {
+      "Identity": "C:\\Users\\elyja\\Source\\Repos\\TYTCapstoneV2\\obj\\Debug\\net8.0\\compressed\\wf4sy84wpa.gz",
+      "SourceId": "TYTCapstone",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\elyja\\Source\\Repos\\TYTCapstoneV2\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/System.Diagnostics.EventLog.wasm.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\elyja\\Source\\Repos\\TYTCapstoneV2\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Diagnostics.EventLog.wasm",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\elyja\\Source\\Repos\\TYTCapstoneV2\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Diagnostics.EventLog.wasm"
     },
     {
       "Identity": "C:\\Users\\elyja\\Source\\Repos\\TYTCapstoneV2\\obj\\Debug\\net8.0\\compressed\\wh48l4isgi.gz",
