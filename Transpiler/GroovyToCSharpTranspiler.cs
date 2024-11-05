@@ -66,7 +66,7 @@ namespace TYTCapstone.Transpiler
         public override CSharpSyntaxNode VisitClassDeclaration([NotNull] GroovyParser.ClassDeclarationContext context)
         {
             var modifiers = new List<SyntaxKind>();
-            var className = context.className.Text;
+            var className = context.className;
 
             // Process class modifiers
             foreach (var modifier in context.classModifier())
@@ -126,7 +126,7 @@ namespace TYTCapstone.Transpiler
         public override CSharpSyntaxNode VisitMethodDeclaration([NotNull] GroovyParser.MethodDeclarationContext context)
         {
             var modifiers = new List<SyntaxKind>();
-            var methodName = context.methodName.Text;
+            var methodName = context.className;
             
             // Process method modifiers
             foreach (var modifier in context.memberModifier())
@@ -156,8 +156,8 @@ namespace TYTCapstone.Transpiler
                 foreach (var param in context.argumentDeclarationList().argumentDeclaration())
                 {
                     parameters.Add(
-                        Parameter(Identifier(param.parameterName.Text))
-                            .WithType(ParseTypeName(param.parameterType.Text)));
+                        Parameter(Identifier(param.IDENTIFIER().GetText()))
+                            .WithType(ParseTypeName(param.IDENTIFIER().GetText())));
                 }
             }
 
@@ -167,9 +167,9 @@ namespace TYTCapstone.Transpiler
                 .WithParameterList(ParameterList(SeparatedList(parameters)));
 
             // Process method body
-            if (context.methodBody != null)
+            if (context.blockStatementWithCurve() != null && context.blockStatementWithCurve().blockStatement() != null)
             {
-                var bodyNode = Visit(context.methodBody);
+                var bodyNode = Visit(context.blockStatementWithCurve().blockStatement());
                 if (bodyNode is BlockSyntax block)
                 {
                     methodDecl = methodDecl.WithBody(block);
