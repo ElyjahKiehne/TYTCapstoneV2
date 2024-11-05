@@ -15,7 +15,7 @@ public class GroovyToCSharpTranspiler : GroovyParserBaseVisitor<string>
     // Entry point to generate C# code
     public string Transpile(GroovyParser.CompilationUnitContext context)
     {
-        this.Visit(context);
+        Visit(context);
         return CsharpSyntaxTree.ToFullString();
     }
 
@@ -28,13 +28,57 @@ public class GroovyToCSharpTranspiler : GroovyParserBaseVisitor<string>
         {
             Console.WriteLine("DEBUG: child.Payload: " + child.Payload);
             Console.WriteLine("DEBUG: child.GetType(): " + child.GetType().ToString());
-            // Visit(child);
+            Visit(child);
         }
         return "";
     }
 
     // Visit class declaration
     public override string VisitClassDeclaration([NotNull] GroovyParser.ClassDeclarationContext context)
+    {
+        // Make a basic class declaration with the same name from the context
+        Console.WriteLine("Transpiling Class Declaration");
+        string className = context.className;
+
+        MemberDeclarationSyntax classDefinition; 
+
+        if (context.isEnum)
+        {
+            classDefinition = SyntaxFactory.EnumDeclaration(context.className);
+        }
+        else if (context.isInterface)
+        {
+            classDefinition = SyntaxFactory.InterfaceDeclaration(context.className);
+        }
+        else
+        {
+            classDefinition = SyntaxFactory.ClassDeclaration(context.className);
+        }
+
+        foreach (var child in context.children)
+        {
+            Visit(child);
+        }
+
+        return "";
+    }
+
+    public override string VisitMethodDeclaration([NotNull] GroovyParser.MethodDeclarationContext context)
+    {
+        return "";
+    }
+
+    public override string VisitFieldDeclaration([NotNull] GroovyParser.FieldDeclarationContext context)
+    {
+        return "";
+    }
+
+    public override string VisitExpressionStatement([NotNull] GroovyParser.ExpressionStatementContext context)
+    {
+        return "";
+    }
+
+    public override string VisitBlockStatement([NotNull] GroovyParser.BlockStatementContext context)
     {
         return "";
     }

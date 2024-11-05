@@ -20,9 +20,9 @@
     }
 </div>
 
-@* <pre>
+<pre>
     @TreeString
-</pre> *@
+</pre>
 
 @if (TranspiledGroovy is not null)
 {
@@ -91,7 +91,7 @@
             GroovyParser parser = new GroovyParser(tokenStream);
             GroovyTree = parser.compilationUnit();
 
-            // TreeString = PrettyPrintTree(tree.ToStringTree(parser));
+            TreeString = PrettyPrintTree(GroovyTree.ToStringTree(parser));
 
             ParseTreeJsonConverter converter = new ParseTreeJsonConverter();
             TreeNode rootNode = converter.ConvertToJson(GroovyTree, parser);
