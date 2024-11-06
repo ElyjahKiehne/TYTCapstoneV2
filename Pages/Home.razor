@@ -6,8 +6,9 @@
 @using System.Text;
 @inject IJSRuntime jsRuntime
 @using Microsoft.AspNetCore.Components.Forms
-
-@* <ASTNodeComponent Node="astRoot" /> *@
+@using TYTCapstone.Transpiler
+@using Microsoft.CodeAnalysis;
+@using Microsoft.CodeAnalysis.CSharp;
 
 <InputFile OnChange="@HandleFileUpload" />
 <button @onclick="TranspileGroovyCode">Transpile</button>
@@ -33,27 +34,80 @@
 
 <div id="parseTree"></div>
 
+<div class="row mt-3">
+    <div class="col">
+        <select class="form-select" @bind="selectedVisitor">
+            <option value="">Select a visitor to test...</option>
+            <option value="ClassDeclaration">Class Declaration Visitor</option>
+            <option value="MethodDeclaration">Method Declaration Visitor</option>
+            <option value="FieldDeclaration">Field Declaration Visitor</option>
+            <option value="BlockStatement">Block Statement Visitor</option>
+            <option value="IfStatement">If Statement Visitor</option>
+            <option value="WhileStatement">While Statement Visitor</option>
+            <option value="ForInStatement">For-In Statement Visitor</option>
+        </select>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <div class="col">
+        <textarea class="form-control" @bind="testInput" rows="10" 
+                  placeholder="Enter Groovy code snippet to test..."></textarea>
+    </div>
+</div>
+
+<button class="btn btn-primary mt-3" @onclick="TestVisitor" 
+        disabled="@(string.IsNullOrEmpty(selectedVisitor))">
+    Test Visitor
+</button>
+
+<div class="mt-3">
+    @if (!string.IsNullOrEmpty(visitorResult))
+    {
+        <pre class="border p-3">@visitorResult</pre>
+    }
+</div>
+
+<div class="row mt-3">
+    <div class="col">
+        <button class="btn btn-secondary" @onclick="LoadExample">Load Example</button>
+    </div>
+</div>
+
 @code {
-    //private ASTNode? astRoot;
     private string? TreeString { get; set; }
     private TreeNode? TreeData { get; set; }
-
     private string? TreeStringJson { get; set; }
     private string? ErrorMessage { get; set; }
     private bool HasFileContent { get; set; }
     private string FileContent { get; set; } = string.Empty;
+    private string? TranspiledGroovy { get; set; } = "";
 
     GroovyParser.CompilationUnitContext? GroovyTree;
-
     GroovyToCSharpTranspiler Transpiler = new GroovyToCSharpTranspiler();
 
-    string TranspiledGroovy = "";
+    private string selectedVisitor = "";
+    private string testInput = "";
+    private string visitorResult = "";
+    private GroovyToCSharpTranspiler testTranspiler = new();
 
-    private void TranspileGroovyCode()
+    private async Task TranspileGroovyCode()
     {
-        if (GroovyTree is not null)
+        try
         {
-            TranspiledGroovy = Transpiler.Transpile(GroovyTree);
+            var inputStream = new AntlrInputStream(FileContent);
+            var lexer = new GroovyLexer(inputStream);
+            var tokenStream = new CommonTokenStream(lexer);
+            var parser = new GroovyParser(tokenStream);
+            
+            var transpiler = new GroovyToCSharpTranspiler();
+            var result = transpiler.Transpile(parser.compilationUnit());
+            
+            TranspiledGroovy = result?.ToString();
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = ex.Message;
         }
     }
 
@@ -104,12 +158,6 @@
         }
     }
 
-    protected override void OnInitialized()
-    {
-        // Initialize with a simple example
-        //ParseGroovyCode(File.ReadAllText("C:\\Users\\elyja\\Source\\Repos\\TYTCapstoneV2\\Pages\\TestGroovyFile.groovy"));
-    }
-
     public async Task RenderParseTree()
     {
         await jsRuntime.InvokeVoidAsync("renderParseTree", JsonDocument.Parse(TreeStringJson).RootElement);
@@ -150,5 +198,123 @@
         }
 
         return result.ToString();
+    }
+
+    private void TestVisitor()
+    {
+        try
+        {
+            // Parse the input
+            var inputStream = new AntlrInputStream(testInput);
+            var lexer = new GroovyLexer(inputStream);
+            var tokenStream = new CommonTokenStream(lexer);
+            var parser = new GroovyParser(tokenStream);
+
+            // Select the appropriate parsing method based on visitor type
+            CSharpSyntaxNode? result = selectedVisitor switch
+            {
+                "ClassDeclaration" => TestClassDeclaration(parser),
+                "MethodDeclaration" => TestMethodDeclaration(parser),
+                "FieldDeclaration" => TestFieldDeclaration(parser),
+                "BlockStatement" => TestBlockStatement(parser),
+                "IfStatement" => TestIfStatement(parser),
+                "WhileStatement" => TestWhileStatement(parser),
+                "ForInStatement" => TestForInStatement(parser),
+                _ => null
+            };
+
+            visitorResult = result?.ToString() ?? "No result";
+        }
+        catch (Exception ex)
+        {
+            visitorResult = $"Error: {ex.Message}";
+        }
+    }
+
+    private CSharpSyntaxNode? TestClassDeclaration(GroovyParser parser)
+    {
+        var context = parser.classDeclaration();
+        return testTranspiler.VisitClassDeclaration(context);
+    }
+
+    private CSharpSyntaxNode? TestMethodDeclaration(GroovyParser parser)
+    {
+        var context = parser.methodDeclaration("YourClassName");
+        return testTranspiler.VisitMethodDeclaration(context);
+    }
+
+    private CSharpSyntaxNode? TestFieldDeclaration(GroovyParser parser)
+    {
+        var context = parser.fieldDeclaration();
+        return testTranspiler.VisitFieldDeclaration(context);
+    }
+
+    private CSharpSyntaxNode? TestBlockStatement(GroovyParser parser)
+    {
+        var context = parser.blockStatement();
+        return testTranspiler.VisitBlockStatement(context);
+    }
+
+    private CSharpSyntaxNode? TestIfStatement(GroovyParser parser)
+    {
+        var context = parser.statement();
+        if (context is GroovyParser.IfStatementContext ifContext)
+        {
+            return testTranspiler.VisitIfStatement(ifContext);
+        }
+        return null;
+    }
+
+    private CSharpSyntaxNode? TestWhileStatement(GroovyParser parser)
+    {
+        var context = parser.statement();
+        if (context is GroovyParser.WhileStatementContext whileContext)
+        {
+            return testTranspiler.VisitWhileStatement(whileContext);
+        }
+        return null;
+    }
+
+    private CSharpSyntaxNode? TestForInStatement(GroovyParser parser)
+    {
+        var context = parser.statement();
+        if (context is GroovyParser.ForInStatementContext forInContext)
+        {
+            return testTranspiler.VisitForInStatement(forInContext);
+        }
+        return null;
+    }
+
+    private void LoadExample()
+    {
+        testInput = selectedVisitor switch
+        {
+            "ClassDeclaration" => @"
+public class Person {
+    String name
+    int age
+}",
+            "MethodDeclaration" => @"
+public void sayHello(String name) {
+    println ""Hello ${name}""
+}",
+            "FieldDeclaration" => @"private String name",
+            "BlockStatement" => @"{ 
+    println ""Hello""
+    println ""World""
+}",
+            "IfStatement" => @"if (x > 0) {
+    doSomething()
+} else {
+    doSomethingElse()
+}",
+            "WhileStatement" => @"while (x < 10) {
+    x++
+}",
+            "ForInStatement" => @"for (item in items) {
+    process(item)
+}",
+            _ => ""
+        };
     }
 }
