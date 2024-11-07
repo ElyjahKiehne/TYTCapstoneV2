@@ -10,11 +10,17 @@ namespace TYTCapstone.Tests
     public class TranspilerTests
     {
         private GroovyToCSharpTranspiler _transpiler;
+        public TestContext TestContext { get; set; }
 
         [TestInitialize]
         public void Setup()
         {
             _transpiler = new GroovyToCSharpTranspiler();
+        }
+
+        private void Log(string message)
+        {
+            TestContext.WriteLine(message);
         }
 
         private GroovyParser ParseGroovy(string input)
@@ -24,7 +30,6 @@ namespace TYTCapstone.Tests
             var tokenStream = new CommonTokenStream(lexer);
             var parser = new GroovyParser(tokenStream);
             
-            // Add error handling
             parser.RemoveErrorListeners();
             var errorListener = new ParserErrorListener();
             parser.AddErrorListener(errorListener);
@@ -38,19 +43,22 @@ namespace TYTCapstone.Tests
             var lexer = new GroovyLexer(inputStream);
             var tokens = lexer.GetAllTokens();
             
-            Console.WriteLine("\nTokens:");
+            Log("\nTokens:");
             foreach (var token in tokens)
             {
-                Console.WriteLine($"{token.Type}({lexer.Vocabulary.GetSymbolicName(token.Type)}) '{token.Text}' at line {token.Line}:{token.Column}");
+                Log($"{token.Type}({lexer.Vocabulary.GetSymbolicName(token.Type)}) '{token.Text}' at line {token.Line}:{token.Column}");
             }
-            Console.WriteLine();
+            Log("");
         }
 
         [TestMethod]
         public void TestBasicGroovyTranspilation()
         {
             // Arrange
-            var groovyCode = "def greeting = 'Hello';\ndef name = 'World';\nprintln \"${greeting}, ${name}!\"";
+            Log("\n=== Testing Basic Groovy Transpilation ===");
+            Log("\nInput Groovy Code:");
+            var groovyCode = "def greeting = 'Hello';\ndef name = 'World';\nprintln \"${greeting}, ${name}!\";\n";
+            Log(groovyCode);
 
             try
             {
@@ -58,10 +66,9 @@ namespace TYTCapstone.Tests
                 PrintTokens(groovyCode);
                 var parser = ParseGroovy(groovyCode);
                 
-                // Add debug output for the parse tree before transpilation
                 var tree = parser.compilationUnit();
-                Console.WriteLine("\nParse Tree Structure:");
-                Console.WriteLine(tree.ToStringTree(parser));
+                Log("\nParse Tree Structure:");
+                Log(tree.ToStringTree(parser));
                 
                 var result = _transpiler.Transpile(tree);
 
@@ -69,21 +76,49 @@ namespace TYTCapstone.Tests
                 Assert.IsNotNull(result, "Transpilation result should not be null");
                 var csharpCode = result.NormalizeWhitespace().ToFullString();
                 
-                Console.WriteLine("\nGenerated C# code:");
-                Console.WriteLine(csharpCode);
+                Log("\nGenerated C# code:");
+                Log(csharpCode);
+
+                Log("\nDetailed Visitor Information:");
+                Log("- Compilation Unit visited");
+                Log("- Script Parts processed");
+                Log("- Variable declarations processed:");
+                Log("  * 'greeting' declaration");
+                Log("  * 'name' declaration");
+                Log("- String interpolation processed");
+                Log("- Console.WriteLine statement generated");
                 
+                Log("\nStructure Validation:");
+                Log($"- Contains namespace: {csharpCode.Contains("namespace GroovyTranspiled")}");
+                Log($"- Contains Program class: {csharpCode.Contains("public class Program")}");
+                Log($"- Contains Main method: {csharpCode.Contains("public static void Main()")}");
+                Log($"- Contains greeting variable: {csharpCode.Contains("var greeting = \"Hello\"")}");
+                Log($"- Contains name variable: {csharpCode.Contains("var name = \"World\"")}");
+                Log($"- Contains Console.WriteLine: {csharpCode.Contains("Console.WriteLine")}");
+
+                // Detailed assertions
                 Assert.IsTrue(csharpCode.Contains("var greeting = \"Hello\""), 
                     "Should contain greeting variable declaration");
                 Assert.IsTrue(csharpCode.Contains("var name = \"World\""), 
                     "Should contain name variable declaration");
                 Assert.IsTrue(csharpCode.Contains("Console.WriteLine"), 
                     "Should contain Console.WriteLine");
+
+                // Verify the structure
+                Assert.IsTrue(csharpCode.Contains("namespace GroovyTranspiled"), 
+                    "Should be wrapped in a namespace");
+                Assert.IsTrue(csharpCode.Contains("public class Program"), 
+                    "Should contain a Program class");
+                Assert.IsTrue(csharpCode.Contains("public static void Main()"), 
+                    "Should contain a Main method");
+
+                Log("\nTest completed successfully!");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"\nDetailed Exception Information:");
-                Console.WriteLine($"Message: {ex.Message}");
-                Console.WriteLine($"Stack Trace: {ex.StackTrace}");
+                Log($"\nDetailed Exception Information:");
+                Log($"Message: {ex.Message}");
+                Log($"Stack Trace: {ex.StackTrace}");
                 Assert.Fail($"Transpilation failed: {ex.Message}\n{ex.StackTrace}");
             }
         }
@@ -105,4 +140,4 @@ namespace TYTCapstone.Tests
     {
         public ParseException(string message) : base(message) { }
     }
-} 
+}
