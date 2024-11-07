@@ -3,20 +3,39 @@
   "WorkspaceRootPath": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|c:\\users\\elyja\\source\\repos\\tytcapstonev2\\pages\\testgroovyfile.groovy||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|solutionrelative:pages\\testgroovyfile.groovy||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|c:\\users\\elyja\\source\\repos\\tytcapstonev2\\transpiler\\groovytocsharptranspiler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|solutionrelative:transpiler\\groovytocsharptranspiler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|c:\\users\\elyja\\source\\repos\\tytcapstonev2\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|c:\\users\\elyja\\source\\repos\\tytcapstonev2\\antlrgenerated\\parser\\groovyparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|solutionrelative:antlrgenerated\\parser\\groovyparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|c:\\users\\elyja\\source\\repos\\tytcapstonev2\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|solutionrelative:pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|c:\\users\\elyja\\source\\repos\\tytcapstonev2\\transpiler\\groovytocsharptranspiler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|solutionrelative:transpiler\\groovytocsharptranspiler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|c:\\users\\elyja\\source\\repos\\tytcapstonev2\\components\\astnodecomponent.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|solutionrelative:components\\astnodecomponent.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|c:\\users\\elyja\\source\\repos\\tytcapstonev2\\antlrgenerated\\parser\\groovyparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|solutionrelative:antlrgenerated\\parser\\groovyparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\elyja\\.nuget\\packages\\castle.core\\5.1.1\\readme.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|c:\\users\\elyja\\source\\repos\\tytcapstonev2\\pages\\testgroovyfile.groovy||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|solutionrelative:pages\\testgroovyfile.groovy||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|c:\\users\\elyja\\source\\repos\\tytcapstonev2\\antlrgenerated\\visitor\\groovyparserbasevisitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|solutionrelative:antlrgenerated\\visitor\\groovyparserbasevisitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|c:\\users\\elyja\\source\\repos\\tytcapstonev2\\antlrgenerated\\visitor\\groovyparservisitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|solutionrelative:antlrgenerated\\visitor\\groovyparservisitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|c:\\users\\elyja\\source\\repos\\tytcapstonev2\\antlrgenerated\\parser\\groovyparser.interp||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -31,16 +50,8 @@
       "RelativeMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|solutionrelative:antlrgenerated\\lexer\\groovylexer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|c:\\users\\elyja\\source\\repos\\tytcapstonev2\\antlrgenerated\\visitor\\groovyparservisitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|solutionrelative:antlrgenerated\\visitor\\groovyparservisitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|c:\\users\\elyja\\source\\repos\\tytcapstonev2\\antlrgenerated\\lexer\\groovylexer.interp||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|solutionrelative:antlrgenerated\\lexer\\groovylexer.interp||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|c:\\users\\elyja\\source\\repos\\tytcapstonev2\\antlrgenerated\\visitor\\groovyparserbasevisitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|solutionrelative:antlrgenerated\\visitor\\groovyparserbasevisitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|c:\\users\\elyja\\source\\repos\\tytcapstonev2\\parsetreeutil\\parsetreejsonconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -57,10 +68,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|c:\\users\\elyja\\source\\repos\\tytcapstonev2\\wwwroot\\js\\parsetreeinterop.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|solutionrelative:wwwroot\\js\\parsetreeinterop.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|c:\\users\\elyja\\source\\repos\\tytcapstonev2\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|c:\\users\\elyja\\source\\repos\\tytcapstonev2\\wwwroot\\css\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -81,10 +88,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|c:\\users\\elyja\\source\\repos\\tytcapstonev2\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|solutionrelative:_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|c:\\users\\elyja\\source\\repos\\tytcapstonev2\\components\\astnodecomponent.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DA91C065-B518-4E85-A03F-40F2B0C45C5D}|TYTCapstone.csproj|solutionrelative:components\\astnodecomponent.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -94,7 +97,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -102,110 +105,121 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "TestGroovyFile.groovy",
               "DocumentMoniker": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\Pages\\TestGroovyFile.groovy",
               "RelativeDocumentMoniker": "Pages\\TestGroovyFile.groovy",
               "ToolTip": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\Pages\\TestGroovyFile.groovy",
               "RelativeToolTip": "Pages\\TestGroovyFile.groovy",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-11-05T19:32:39.254Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-05T19:32:39.254Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "GroovyParser.tokens",
-              "DocumentMoniker": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\ANTLRGenerated\\Parser\\GroovyParser.tokens",
-              "RelativeDocumentMoniker": "ANTLRGenerated\\Parser\\GroovyParser.tokens",
-              "ToolTip": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\ANTLRGenerated\\Parser\\GroovyParser.tokens",
-              "RelativeToolTip": "ANTLRGenerated\\Parser\\GroovyParser.tokens",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-11-05T19:19:44.903Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GroovyParser.interp",
-              "DocumentMoniker": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\ANTLRGenerated\\Parser\\GroovyParser.interp",
-              "RelativeDocumentMoniker": "ANTLRGenerated\\Parser\\GroovyParser.interp",
-              "ToolTip": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\ANTLRGenerated\\Parser\\GroovyParser.interp",
-              "RelativeToolTip": "ANTLRGenerated\\Parser\\GroovyParser.interp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-11-05T19:19:36.441Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "GroovyParser.cs",
               "DocumentMoniker": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\ANTLRGenerated\\Parser\\GroovyParser.cs",
               "RelativeDocumentMoniker": "ANTLRGenerated\\Parser\\GroovyParser.cs",
               "ToolTip": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\ANTLRGenerated\\Parser\\GroovyParser.cs",
               "RelativeToolTip": "ANTLRGenerated\\Parser\\GroovyParser.cs",
-              "ViewState": "AgIAAKcrAAAAAAAAAAAowMcrAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAPsAAAAAAAAAAADwvwABAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T18:53:11.656Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-05T18:53:11.656Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "GroovyLexer.interp",
-              "DocumentMoniker": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\ANTLRGenerated\\Lexer\\GroovyLexer.interp",
-              "RelativeDocumentMoniker": "ANTLRGenerated\\Lexer\\GroovyLexer.interp",
-              "ToolTip": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\ANTLRGenerated\\Lexer\\GroovyLexer.interp",
-              "RelativeToolTip": "ANTLRGenerated\\Lexer\\GroovyLexer.interp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-11-05T18:52:10.389Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Home.razor",
               "DocumentMoniker": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\Pages\\Home.razor",
               "RelativeDocumentMoniker": "Pages\\Home.razor",
               "ToolTip": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\Pages\\Home.razor",
               "RelativeToolTip": "Pages\\Home.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAADMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-31T21:06:48.732Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-31T21:06:48.732Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "GroovyParserVisitor.cs",
               "DocumentMoniker": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\ANTLRGenerated\\Visitor\\GroovyParserVisitor.cs",
               "RelativeDocumentMoniker": "ANTLRGenerated\\Visitor\\GroovyParserVisitor.cs",
               "ToolTip": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\ANTLRGenerated\\Visitor\\GroovyParserVisitor.cs",
               "RelativeToolTip": "ANTLRGenerated\\Visitor\\GroovyParserVisitor.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAABPAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAowDwAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-01T17:22:55.494Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "parseTreeInterop.js",
               "DocumentMoniker": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\wwwroot\\js\\parseTreeInterop.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\parseTreeInterop.js",
               "ToolTip": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\wwwroot\\js\\parseTreeInterop.js",
               "RelativeToolTip": "wwwroot\\js\\parseTreeInterop.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAA6wLcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAiwLcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-10-31T22:50:40.618Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
+              "Title": "GroovyToCSharpTranspiler.cs",
+              "DocumentMoniker": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\Transpiler\\GroovyToCSharpTranspiler.cs",
+              "RelativeDocumentMoniker": "Transpiler\\GroovyToCSharpTranspiler.cs",
+              "ToolTip": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\Transpiler\\GroovyToCSharpTranspiler.cs",
+              "RelativeToolTip": "Transpiler\\GroovyToCSharpTranspiler.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAACAAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T17:26:45.541Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "readme.txt",
+              "DocumentMoniker": "C:\\Users\\elyja\\.nuget\\packages\\castle.core\\5.1.1\\readme.txt",
+              "RelativeDocumentMoniker": "..\\..\\..\\.nuget\\packages\\castle.core\\5.1.1\\readme.txt",
+              "ToolTip": "C:\\Users\\elyja\\.nuget\\packages\\castle.core\\5.1.1\\readme.txt",
+              "RelativeToolTip": "..\\..\\..\\.nuget\\packages\\castle.core\\5.1.1\\readme.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-11-05T20:33:10.733Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ASTNodeComponent.razor",
+              "DocumentMoniker": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\components\\ASTNodeComponent.razor",
+              "RelativeDocumentMoniker": "components\\ASTNodeComponent.razor",
+              "ToolTip": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\components\\ASTNodeComponent.razor",
+              "RelativeToolTip": "components\\ASTNodeComponent.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-31T22:00:48.971Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-10-31T21:33:48.935Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "GroovyLexer.cs",
               "DocumentMoniker": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\ANTLRGenerated\\Lexer\\GroovyLexer.cs",
               "RelativeDocumentMoniker": "ANTLRGenerated\\Lexer\\GroovyLexer.cs",
@@ -217,44 +231,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GroovyToCSharpTranspiler.cs",
-              "DocumentMoniker": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\Transpiler\\GroovyToCSharpTranspiler.cs",
-              "RelativeDocumentMoniker": "Transpiler\\GroovyToCSharpTranspiler.cs",
-              "ToolTip": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\Transpiler\\GroovyToCSharpTranspiler.cs",
-              "RelativeToolTip": "Transpiler\\GroovyToCSharpTranspiler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 12,
+              "Title": "GroovyLexer.interp",
+              "DocumentMoniker": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\ANTLRGenerated\\Lexer\\GroovyLexer.interp",
+              "RelativeDocumentMoniker": "ANTLRGenerated\\Lexer\\GroovyLexer.interp",
+              "ToolTip": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\ANTLRGenerated\\Lexer\\GroovyLexer.interp",
+              "RelativeToolTip": "ANTLRGenerated\\Lexer\\GroovyLexer.interp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-11-05T18:52:10.389Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "GroovyParserBaseVisitor.cs",
+              "DocumentMoniker": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\ANTLRGenerated\\Visitor\\GroovyParserBaseVisitor.cs",
+              "RelativeDocumentMoniker": "ANTLRGenerated\\Visitor\\GroovyParserBaseVisitor.cs",
+              "ToolTip": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\ANTLRGenerated\\Visitor\\GroovyParserBaseVisitor.cs",
+              "RelativeToolTip": "ANTLRGenerated\\Visitor\\GroovyParserBaseVisitor.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAADAAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T17:26:45.541Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-01T17:22:45.561Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "ASTNodeComponent.razor",
-              "DocumentMoniker": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\Components\\ASTNodeComponent.razor",
-              "RelativeDocumentMoniker": "Components\\ASTNodeComponent.razor",
-              "ToolTip": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\Components\\ASTNodeComponent.razor",
-              "RelativeToolTip": "Components\\ASTNodeComponent.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-31T22:00:48.971Z"
+              "DocumentIndex": 9,
+              "Title": "GroovyParser.interp",
+              "DocumentMoniker": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\ANTLRGenerated\\Parser\\GroovyParser.interp",
+              "RelativeDocumentMoniker": "ANTLRGenerated\\Parser\\GroovyParser.interp",
+              "ToolTip": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\ANTLRGenerated\\Parser\\GroovyParser.interp",
+              "RelativeToolTip": "ANTLRGenerated\\Parser\\GroovyParser.interp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-11-05T19:19:36.441Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 10,
+              "Title": "GroovyParser.tokens",
+              "DocumentMoniker": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\ANTLRGenerated\\Parser\\GroovyParser.tokens",
+              "RelativeDocumentMoniker": "ANTLRGenerated\\Parser\\GroovyParser.tokens",
+              "ToolTip": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\ANTLRGenerated\\Parser\\GroovyParser.tokens",
+              "RelativeToolTip": "ANTLRGenerated\\Parser\\GroovyParser.tokens",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-11-05T19:19:44.903Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
               "Title": "index.html",
               "DocumentMoniker": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\wwwroot\\index.html",
               "RelativeDocumentMoniker": "wwwroot\\index.html",
               "ToolTip": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\wwwroot\\index.html",
               "RelativeToolTip": "wwwroot\\index.html",
-              "ViewState": "AgIAABEAAAAAAAAAAABBwBsAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAABRwBsAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2024-10-31T22:51:12.052Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "GroovyLexer.cs",
               "DocumentMoniker": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\obj\\Debug\\net8.0\\GroovyLexer.cs",
               "RelativeDocumentMoniker": "obj\\Debug\\net8.0\\GroovyLexer.cs",
@@ -265,31 +302,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "GroovyParserBaseVisitor.cs",
-              "DocumentMoniker": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\ANTLRGenerated\\Visitor\\GroovyParserBaseVisitor.cs",
-              "RelativeDocumentMoniker": "ANTLRGenerated\\Visitor\\GroovyParserBaseVisitor.cs",
-              "ToolTip": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\ANTLRGenerated\\Visitor\\GroovyParserBaseVisitor.cs",
-              "RelativeToolTip": "ANTLRGenerated\\Visitor\\GroovyParserBaseVisitor.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAMwB8AAABRAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T17:22:45.561Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": ".gitignore",
-              "DocumentMoniker": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\.gitignore",
-              "RelativeDocumentMoniker": ".gitignore",
-              "ToolTip": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\.gitignore",
-              "RelativeToolTip": ".gitignore",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-10-31T21:33:48.935Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "_Imports.razor",
               "DocumentMoniker": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\_Imports.razor",
               "RelativeDocumentMoniker": "_Imports.razor",
@@ -301,7 +314,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "ParseTreeJsonConverter.cs",
               "DocumentMoniker": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\ParseTreeUtil\\ParseTreeJsonConverter.cs",
               "RelativeDocumentMoniker": "ParseTreeUtil\\ParseTreeJsonConverter.cs",
@@ -313,43 +326,43 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "parseTreeInterop.js",
               "DocumentMoniker": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\wwwroot\\js\\parseTreeInterop.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\parseTreeInterop.js",
               "ToolTip": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\wwwroot\\js\\parseTreeInterop.js",
               "RelativeToolTip": "wwwroot\\js\\parseTreeInterop.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwKUAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAA6wKUAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-10-31T22:53:02.522Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "app.css",
               "DocumentMoniker": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\wwwroot\\css\\app.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\app.css",
               "ToolTip": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\wwwroot\\css\\app.css",
               "RelativeToolTip": "wwwroot\\css\\app.css",
-              "ViewState": "AgIAAEsAAAAAAAAAAIBJwHYAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAEgAAAAAAAAAAIBZwHYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2024-10-31T23:05:32.802Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "TYTCapstone.csproj",
               "DocumentMoniker": "C:\\Users\\elyja\\Source\\Repos\\TYTCapstoneV2\\TYTCapstone.csproj",
               "RelativeDocumentMoniker": "TYTCapstone.csproj",
               "ToolTip": "C:\\Users\\elyja\\Source\\Repos\\TYTCapstoneV2\\TYTCapstone.csproj",
               "RelativeToolTip": "TYTCapstone.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABfAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2024-10-31T21:15:29.755Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "GrammarPredicates.cs",
               "DocumentMoniker": "C:\\Users\\elyja\\source\\repos\\TYTCapstoneV2\\ANTLRGenerated\\Util\\GrammarPredicates.cs",
               "RelativeDocumentMoniker": "ANTLRGenerated\\Util\\GrammarPredicates.cs",
@@ -358,16 +371,10 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-01T17:34:11.248Z"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": -1,
-          "Children": [
+            },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{da7e21aa-da94-452d-8aa1-d1b23f73f576}"
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         }

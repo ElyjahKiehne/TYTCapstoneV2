@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using Antlr4.Runtime.Misc;
+using Antlr4.Runtime.Tree;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -19,49 +20,40 @@ public class GroovyToCSharpTranspiler : GroovyParserBaseVisitor<CSharpSyntaxNode
 
     public override CSharpSyntaxNode VisitCompilationUnit([NotNull] GroovyParser.CompilationUnitContext context)
     {
-        var statements = new List<StatementSyntax>();
-        
-        foreach (var scriptPart in context.scriptPart())
-        {
-            var visitedPart = Visit(scriptPart);
-            if (visitedPart is StatementSyntax statementSyntax)
-            {
-                statements.Add(statementSyntax);
-            }
-        }
+            Console.WriteLine("Visiting Compilation Unit");
 
-        return CompilationUnit()
-            .WithUsings(SingletonList(
-                UsingDirective(
-                    IdentifierName("System"))))
-            .WithMembers(
-                SingletonList<MemberDeclarationSyntax>(
-                    NamespaceDeclaration(
-                        IdentifierName("GroovyTranspiled"))
-                    .WithMembers(
-                        SingletonList<MemberDeclarationSyntax>(
-                            ClassDeclaration("Program")
-                            .WithModifiers(
-                                TokenList(
-                                    Token(SyntaxKind.PublicKeyword)))
-                            .WithMembers(
-                                SingletonList<MemberDeclarationSyntax>(
-                                    MethodDeclaration(
-                                        PredefinedType(
-                                            Token(SyntaxKind.VoidKeyword)),
-                                        Identifier("Main"))
-                                    .WithModifiers(
-                                        TokenList(
-                                            Token(SyntaxKind.PublicKeyword),
-                                            Token(SyntaxKind.StaticKeyword)))
-                                    .WithBody(Block(statements))
-                                )
-                            )
-                        )
-                    )
-                )
-            );
-    }
+            var usingDirectives = new List<UsingDirectiveSyntax>();
+            var members = new List<MemberDeclarationSyntax>();
+
+            foreach (IParseTree child in context.children)
+            {
+                // Visit each child and determine the type of node returned
+                var visitedNode = Visit(child);
+
+                if (visitedNode is UsingDirectiveSyntax usingDirective)
+                {
+                    // Collect using directives separately
+                    usingDirectives.Add(usingDirective);
+                }
+                else if (visitedNode is MemberDeclarationSyntax member)
+                {
+                    // Collect top-level members like classes, interfaces, enums
+                    members.Add(member);
+                }
+                else if (visitedNode is StatementSyntax statement)
+                {
+                    // Wrap top-level statements in GlobalStatementSyntax
+                    var globalStatement = SyntaxFactory.GlobalStatement(statement);
+                    members.Add(globalStatement);
+                }
+            }
+
+            // Create the compilation unit, adding both usings and members
+            return SyntaxFactory.CompilationUnit()
+                .AddUsings(usingDirectives.ToArray())
+                .AddMembers(members.ToArray())
+                .NormalizeWhitespace();
+        }
 
     public override CSharpSyntaxNode VisitScriptPart([NotNull] GroovyParser.ScriptPartContext context)
     {
