@@ -3829,40 +3829,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\elyja\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/Users/skyleracosta/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\elyja\\Source\\Repos\\TYTCapstoneV2\\TYTCapstone.Tests\\TYTCapstone.Tests.csproj",
+      "projectUniqueName": "/Users/skyleracosta/Documents/TrainYardCapstone/TYTCapstoneV2/TYTCapstone.Tests/TYTCapstone.Tests.csproj",
       "projectName": "TYTCapstone.Tests",
-      "projectPath": "C:\\Users\\elyja\\Source\\Repos\\TYTCapstoneV2\\TYTCapstone.Tests\\TYTCapstone.Tests.csproj",
-      "packagesPath": "C:\\Users\\elyja\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\elyja\\Source\\Repos\\TYTCapstoneV2\\TYTCapstone.Tests\\obj\\",
+      "projectPath": "/Users/skyleracosta/Documents/TrainYardCapstone/TYTCapstoneV2/TYTCapstone.Tests/TYTCapstone.Tests.csproj",
+      "packagesPath": "/Users/skyleracosta/.nuget/packages/",
+      "outputPath": "/Users/skyleracosta/Documents/TrainYardCapstone/TYTCapstoneV2/TYTCapstone.Tests/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\elyja\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/skyleracosta/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\elyja\\Source\\Repos\\TYTCapstoneV2\\TYTCapstone.csproj": {
-              "projectPath": "C:\\Users\\elyja\\Source\\Repos\\TYTCapstoneV2\\TYTCapstone.csproj"
+            "/Users/skyleracosta/Documents/TrainYardCapstone/TYTCapstoneV2/TYTCapstone.csproj": {
+              "projectPath": "/Users/skyleracosta/Documents/TrainYardCapstone/TYTCapstoneV2/TYTCapstone.csproj"
             }
           }
         }
@@ -3871,11 +3863,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -3927,7 +3914,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/opt/homebrew/Cellar/dotnet/8.0.8_1/libexec/sdk/8.0.108/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
