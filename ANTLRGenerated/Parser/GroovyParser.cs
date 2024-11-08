@@ -115,7 +115,7 @@ public partial class GroovyParser : Parser {
 		"'...'", "'as'", "'instanceof'", null, null, "'abstract'", "'static'", 
 		"'final'", "'transient'", "'native'", "'volatile'", "'synchronized'", 
 		"'strictfp'", "'threadsafe'"
-	};
+    };
 	private static readonly string[] _SymbolicNames = {
 		null, "SHEBANG_COMMENT", "WS", "LPAREN", "RPAREN", "LBRACK", "RBRACK", 
 		"LCURVE", "RCURVE", "STRING", "GSTRING_START", "GSTRING_END", "GSTRING_PART", 

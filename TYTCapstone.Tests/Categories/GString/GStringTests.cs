@@ -3,19 +3,22 @@ using Antlr4.Runtime;
 using TYTCapstone.Transpiler;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis;
+using Castle.DynamicProxy;
 
 namespace TYTCapstone.Tests
 {
     [TestClass]
-    public class TranspilerTests
+    public class GStringTests
     {
         private GroovyToCSharpTranspiler _transpiler;
         public TestContext TestContext { get; set; }
 
+        private ProxyGenerator proxyGenerator = new ProxyGenerator();
+
         [TestInitialize]
         public void Setup()
         {
-            _transpiler = new GroovyToCSharpTranspiler();
+            _transpiler = proxyGenerator.CreateClassProxy<GroovyToCSharpTranspiler>(new LoggingInterceptor());
         }
 
         private void Log(string message)
@@ -52,12 +55,12 @@ namespace TYTCapstone.Tests
         }
 
         [TestMethod]
-        public void TestBasicGroovyTranspilation()
+        public void GStringTest_1()
         {
             // Arrange
             Log("\n=== Testing Basic Groovy Transpilation ===");
             Log("\nInput Groovy Code:");
-            var groovyCode = "def greeting = 'Hello';\ndef name = 'World';\nprintln \"${greeting}, ${name}!\";\n";
+            var groovyCode = "def greeting = 'Hello'\r\ndef name = 'World'\r\nprintln \"${greeting}, ${name}!\"\r\n";
             Log(groovyCode);
 
             try
@@ -78,20 +81,8 @@ namespace TYTCapstone.Tests
                 
                 Log("\nGenerated C# code:");
                 Log(csharpCode);
-
-                Log("\nDetailed Visitor Information:");
-                Log("- Compilation Unit visited");
-                Log("- Script Parts processed");
-                Log("- Variable declarations processed:");
-                Log("  * 'greeting' declaration");
-                Log("  * 'name' declaration");
-                Log("- String interpolation processed");
-                Log("- Console.WriteLine statement generated");
                 
                 Log("\nStructure Validation:");
-                Log($"- Contains namespace: {csharpCode.Contains("namespace GroovyTranspiled")}");
-                Log($"- Contains Program class: {csharpCode.Contains("public class Program")}");
-                Log($"- Contains Main method: {csharpCode.Contains("public static void Main()")}");
                 Log($"- Contains greeting variable: {csharpCode.Contains("var greeting = \"Hello\"")}");
                 Log($"- Contains name variable: {csharpCode.Contains("var name = \"World\"")}");
                 Log($"- Contains Console.WriteLine: {csharpCode.Contains("Console.WriteLine")}");
@@ -104,13 +95,66 @@ namespace TYTCapstone.Tests
                 Assert.IsTrue(csharpCode.Contains("Console.WriteLine"), 
                     "Should contain Console.WriteLine");
 
-                // Verify the structure
-                Assert.IsTrue(csharpCode.Contains("namespace GroovyTranspiled"), 
-                    "Should be wrapped in a namespace");
-                Assert.IsTrue(csharpCode.Contains("public class Program"), 
-                    "Should contain a Program class");
-                Assert.IsTrue(csharpCode.Contains("public static void Main()"), 
-                    "Should contain a Main method");
+                Log("\nTest completed successfully!");
+            }
+            catch (Exception ex)
+            {
+                Log($"\nDetailed Exception Information:");
+                Log($"Message: {ex.Message}");
+                Log($"Stack Trace: {ex.StackTrace}");
+                Assert.Fail($"Transpilation failed: {ex.Message}\n{ex.StackTrace}");
+            }
+        }
+
+        [TestMethod]
+        public void GStringTest_2()
+        {
+            // Arrange
+            Log("\n=== Testing Basic Groovy Transpilation ===");
+            Log("\nInput Groovy Code:");
+            var groovyCode = "def greeting = 'Hello';\r\ndef name = 'World';\r\ndef extra = 'I am a program';\r\nprintln \"${greeting}, ${name}! This is a test for GStrings. ${extra}\";";
+            Log(groovyCode);
+
+            try
+            {
+                // Act
+                PrintTokens(groovyCode);
+                var parser = ParseGroovy(groovyCode);
+
+                var tree = parser.compilationUnit();
+                Log("\nParse Tree Structure:");
+                Log(tree.ToStringTree(parser));
+
+                var result = _transpiler.Transpile(tree);
+
+                // Assert
+                Assert.IsNotNull(result, "Transpilation result should not be null");
+                var csharpCode = result.NormalizeWhitespace().ToFullString();
+
+                Log("\nGenerated C# code:");
+                Log(csharpCode);
+
+                Log("\nStructure Validation:");
+                Log($"- Contains greeting variable: {csharpCode.Contains("var greeting = \"Hello\"")}");
+                Log($"- Contains name variable: {csharpCode.Contains("var name = \"World\"")}");
+                Log($"- Contains name variable: {csharpCode.Contains("var extra = \"I am a program\"")}");
+                Log($"- Contains Console.WriteLine: {csharpCode.Contains("Console.WriteLine")}");
+
+                // Detailed assertions
+                Assert.IsTrue(csharpCode.Contains("var greeting = \"Hello\""),
+                    "Should contain greeting variable declaration");
+
+                Assert.IsTrue(csharpCode.Contains("var name = \"World\""),
+                    "Should contain name variable declaration");
+
+                Assert.IsTrue(csharpCode.Contains("var extra = \"I am a program\""),
+                    "Should contain extra variable declaration");
+
+                Assert.IsTrue(csharpCode.Contains("Console.WriteLine"),
+                    "Should contain Console.WriteLine");
+
+                Assert.IsTrue(csharpCode.Contains("! This is a test for GStrings. "),
+                    "Should contain '! This is a test for GStrings.'");
 
                 Log("\nTest completed successfully!");
             }
@@ -123,6 +167,8 @@ namespace TYTCapstone.Tests
             }
         }
     }
+
+
 
     // Add custom error listener
     public class ParserErrorListener : IAntlrErrorListener<IToken>

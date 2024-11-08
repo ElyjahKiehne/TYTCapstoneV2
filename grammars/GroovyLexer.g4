@@ -77,9 +77,15 @@ lexer grammar GroovyLexer;
 
 
 
-LINE_COMMENT: '//' .*?  ('\n' | EOF)                           -> type(NL) ;
-DOC_COMMENT: '/**' .*? '*/'                                    -> type(NL) ;
-BLOCK_COMMENT: '/*' .*? '*/'                                   -> type(NL) ;
+LINE_COMMENT: '//' ~[\r\n]* -> skip ;
+// Skip everything after '//' until a newline, but do not consume the newline.
+
+BLOCK_COMMENT: '/*' .*? '*/' -> skip ;
+// Skip everything between '/*' and '*/'.
+
+DOC_COMMENT: '/**' .*? '*/' -> skip ;
+// Skip everything between '/**' and '*/'.
+
 SHEBANG_COMMENT: { tokenIndex == 0 }? '#!' .*? '\n'            -> skip     ;
 
 WS: [ \t]+ -> skip ;

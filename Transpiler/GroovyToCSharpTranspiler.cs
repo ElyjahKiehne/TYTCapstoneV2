@@ -13,48 +13,55 @@ public class GroovyToCSharpTranspiler : GroovyParserBaseVisitor<CSharpSyntaxNode
     private readonly List<UsingDirectiveSyntax> Usings = new();
     private readonly List<MemberDeclarationSyntax> Members = new();
 
+    /// <summary>
+    /// Change how much logging information is seen when the autologger 
+    /// intercepts a visitor and displays its information.
+    /// </summary>
+    private const LoggerVerbosity LoggingVerbosity = LoggerVerbosity.Verbose;
+
     public CompilationUnitSyntax Transpile(GroovyParser.CompilationUnitContext context)
     {
         return (CompilationUnitSyntax)Visit(context);
     }
 
+    [AutoLog(LoggingVerbosity)]
     public override CSharpSyntaxNode VisitCompilationUnit([NotNull] GroovyParser.CompilationUnitContext context)
     {
-            Console.WriteLine("Visiting Compilation Unit");
+        var usingDirectives = new List<UsingDirectiveSyntax>();
+        var members = new List<MemberDeclarationSyntax>();
 
-            var usingDirectives = new List<UsingDirectiveSyntax>();
-            var members = new List<MemberDeclarationSyntax>();
+        foreach (IParseTree child in context.children)
+        {
+            // Visit each child and determine the type of node returned
+            var visitedNode = Visit(child);
 
-            foreach (IParseTree child in context.children)
+            if (visitedNode is UsingDirectiveSyntax usingDirective)
             {
-                // Visit each child and determine the type of node returned
-                var visitedNode = Visit(child);
-
-                if (visitedNode is UsingDirectiveSyntax usingDirective)
-                {
-                    // Collect using directives separately
-                    usingDirectives.Add(usingDirective);
-                }
-                else if (visitedNode is MemberDeclarationSyntax member)
-                {
-                    // Collect top-level members like classes, interfaces, enums
-                    members.Add(member);
-                }
-                else if (visitedNode is StatementSyntax statement)
-                {
-                    // Wrap top-level statements in GlobalStatementSyntax
-                    var globalStatement = SyntaxFactory.GlobalStatement(statement);
-                    members.Add(globalStatement);
-                }
+                // Collect using directives separately
+                usingDirectives.Add(usingDirective);
             }
-
-            // Create the compilation unit, adding both usings and members
-            return SyntaxFactory.CompilationUnit()
-                .AddUsings(usingDirectives.ToArray())
-                .AddMembers(members.ToArray())
-                .NormalizeWhitespace();
+            else if (visitedNode is MemberDeclarationSyntax member)
+            {
+                // Collect top-level members like classes, interfaces, enums
+                members.Add(member);
+            }
+            else if (visitedNode is StatementSyntax statement)
+            {
+                // Wrap top-level statements in GlobalStatementSyntax
+                var globalStatement = SyntaxFactory.GlobalStatement(statement);
+                members.Add(globalStatement);
+            }
         }
 
+        // Create the compilation unit, adding both usings and members
+        return SyntaxFactory.CompilationUnit()
+            .AddUsings(usingDirectives.ToArray())
+            .AddMembers(members.ToArray())
+            .NormalizeWhitespace();
+    }
+
+
+    [AutoLog(LoggingVerbosity)]
     public override CSharpSyntaxNode VisitScriptPart([NotNull] GroovyParser.ScriptPartContext context)
     {
         if (context.statement() != null)
@@ -68,6 +75,7 @@ public class GroovyToCSharpTranspiler : GroovyParserBaseVisitor<CSharpSyntaxNode
         return null;
     }
 
+    [AutoLog(LoggingVerbosity)]
     public override CSharpSyntaxNode VisitFieldDeclaration([NotNull] GroovyParser.FieldDeclarationContext context)
     {
         var declarations = context.singleDeclaration();
@@ -88,10 +96,9 @@ public class GroovyToCSharpTranspiler : GroovyParserBaseVisitor<CSharpSyntaxNode
         return LocalDeclarationStatement(variableDeclaration);
     }
 
+    [AutoLog(LoggingVerbosity)]
     public override CSharpSyntaxNode VisitExpressionStatement([NotNull] GroovyParser.ExpressionStatementContext context)
     {
-        Console.WriteLine($"Visiting ExpressionStatement: {context.GetText()}");
-        
         var expressionNode = Visit(context.expression());
         
         if (expressionNode == null)
@@ -107,10 +114,9 @@ public class GroovyToCSharpTranspiler : GroovyParserBaseVisitor<CSharpSyntaxNode
         return ExpressionStatement(expr);
     }
 
+    [AutoLog(LoggingVerbosity)]
     public override CSharpSyntaxNode VisitCmdExpression([NotNull] GroovyParser.CmdExpressionContext context)
     {
-        Console.WriteLine($"Visiting CmdExpression: {context.GetText()}");
-        
         var nonKwCalls = context.nonKwCallExpressionRule();
         if (nonKwCalls != null && nonKwCalls.Length > 0)
         {
@@ -120,10 +126,9 @@ public class GroovyToCSharpTranspiler : GroovyParserBaseVisitor<CSharpSyntaxNode
         return base.VisitCmdExpression(context);
     }
 
+    [AutoLog(LoggingVerbosity)]
     public override CSharpSyntaxNode VisitNonKwCallExpressionRule([NotNull] GroovyParser.NonKwCallExpressionRuleContext context)
     {
-        Console.WriteLine($"Visiting NonKwCallExpressionRule: {context.GetText()}");
-        
         if (context.IDENTIFIER() != null && context.argumentList() != null)
         {
             var methodName = context.IDENTIFIER().GetText();
@@ -156,10 +161,9 @@ public class GroovyToCSharpTranspiler : GroovyParserBaseVisitor<CSharpSyntaxNode
         return base.VisitNonKwCallExpressionRule(context);
     }
 
+    [AutoLog(LoggingVerbosity)]
     public override CSharpSyntaxNode VisitArgumentList([NotNull] GroovyParser.ArgumentListContext context)
     {
-        Console.WriteLine($"Visiting ArgumentList: {context.GetText()}");
-        
         var arguments = new List<ArgumentSyntax>();
         
         foreach (var arg in context.argument())
@@ -178,12 +182,13 @@ public class GroovyToCSharpTranspiler : GroovyParserBaseVisitor<CSharpSyntaxNode
         return ArgumentList(SeparatedList<ArgumentSyntax>(arguments));
     }
 
+    [AutoLog(LoggingVerbosity)]
     public override CSharpSyntaxNode VisitArgument([NotNull] GroovyParser.ArgumentContext context)
     {
-        Console.WriteLine($"Visiting Argument: {context.GetText()}");
         return Visit(context.expression());
     }
 
+    [AutoLog(LoggingVerbosity)]
     public override CSharpSyntaxNode VisitConstantExpression([NotNull] GroovyParser.ConstantExpressionContext context)
     {
         var text = context.STRING().GetText();
@@ -194,10 +199,9 @@ public class GroovyToCSharpTranspiler : GroovyParserBaseVisitor<CSharpSyntaxNode
             Literal(text));
     }
 
+    [AutoLog(LoggingVerbosity)]
     public override CSharpSyntaxNode VisitGstringExpression([NotNull] GroovyParser.GstringExpressionContext context)
     {
-        Console.WriteLine($"Visiting GstringExpression: {context.GetText()}");
-        
         var parts = new List<InterpolatedStringContentSyntax>();
         var gstring = context.gstring();
         
@@ -252,10 +256,9 @@ public class GroovyToCSharpTranspiler : GroovyParserBaseVisitor<CSharpSyntaxNode
             Token(SyntaxKind.InterpolatedStringEndToken));
     }
 
+    [AutoLog(LoggingVerbosity)]
     public override CSharpSyntaxNode VisitGstringExpressionBody([NotNull] GroovyParser.GstringExpressionBodyContext context)
     {
-        Console.WriteLine($"Visiting GstringExpressionBody: {context.GetText()}");
-        
         if (context.expression() != null)
         {
             return Visit(context.expression());
@@ -264,9 +267,9 @@ public class GroovyToCSharpTranspiler : GroovyParserBaseVisitor<CSharpSyntaxNode
         return base.VisitGstringExpressionBody(context);
     }
 
+    [AutoLog(LoggingVerbosity)]
     public override CSharpSyntaxNode VisitVariableExpression([NotNull] GroovyParser.VariableExpressionContext context)
     {
-        Console.WriteLine($"Visiting VariableExpression: {context.GetText()}");
         return IdentifierName(context.IDENTIFIER().GetText());
     }
 } // Close GroovyToCSharpTranspiler class
